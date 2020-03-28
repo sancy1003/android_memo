@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/gvItem_memo" xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="200dp" android:background="@drawable/post_blue">
+
+    <TextView
+        android:id="@+id/tv_memo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="메모메모메모메모메모메모메모메모메모메모메모메모메모메모메모메모"
+        android:paddingTop="20dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="20dp"/>
+
+</LinearLayout>

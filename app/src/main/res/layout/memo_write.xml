@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@drawable/gradient"
+        android:gravity="center_vertical">
+
+        <ImageButton
+            android:id="@+id/btn_write_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="6dp"
+            android:scaleX="1.5"
+            android:scaleY="1.7"
+            android:tint="#ffffff"
+            android:src="@drawable/ic_chevron_left_black_24dp"
+            android:background="#00FFFFFF"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="8"></LinearLayout>
+
+        <Button
+            android:id="@+id/btn_write_write"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="메모하기"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:background="#00FFFFFF"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <EditText
+            android:id="@+id/et_memo_write"
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:textSize="18sp"
+            android:hint="메모를 남겨주세요."
+            android:gravity="top">
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/Widget.AppCompat.ButtonBar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:padding="3dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_blue"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/post_blue"
+                android:scaleType="fitXY"
+                android:background="@drawable/post_blue"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="3dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_green"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/post_green"
+                android:scaleType="fitXY"
+                android:background="@drawable/post_green"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="3dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_purple"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/post_purple"
+                android:scaleType="fitXY"
+                android:background="@drawable/post_purple"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="3dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_red"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/post_red"
+                android:scaleType="fitXY"
+                android:background="@drawable/post_red"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="3dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/btn_yellow"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/post_yellow"
+                android:scaleType="fitXY"
+                android:background="@drawable/post_yellow"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
