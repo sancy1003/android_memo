@@ -43,15 +43,19 @@
     </LinearLayout>
 
     <RelativeLayout
+        android:backgroundTint="@color/realWhite"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
     <LinearLayout
+        android:backgroundTint="@color/realWhite"
         android:id="@+id/ll_memo_form"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <GridView
             android:id="@+id/gv_memo"
+            android:background="@color/realWhite"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:numColumns="2"/>

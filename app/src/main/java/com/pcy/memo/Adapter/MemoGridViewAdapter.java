@@ -65,19 +65,16 @@ public class MemoGridViewAdapter extends BaseAdapter {
 
         switch (memo_data.getColor()) {
             case 0 :
-                gvItem_memo.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.post_blue));
+                gvItem_memo.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.p_blue));
                 break;
             case 1 :
-                gvItem_memo.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.post_green));
+                gvItem_memo.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.p_green));
                 break;
             case 2 :
-                gvItem_memo.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.post_purple));
+                gvItem_memo.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.p_red));
                 break;
             case 3 :
-                gvItem_memo.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.post_red));
-                break;
-            case 4 :
-                gvItem_memo.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.post_yellow));
+                gvItem_memo.setBackgroundDrawable(ContextCompat.getDrawable(context, R.drawable.p_yellow));
                 break;
         }
 

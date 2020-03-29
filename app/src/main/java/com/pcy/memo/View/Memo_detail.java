@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -123,8 +124,13 @@ public class Memo_detail extends AppCompatActivity {
     public void DeleteAlert(final int delPos) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("메모 지우기");
-        builder.setMessage("정말 메모를 지우시나요?");
-        builder.setPositiveButton("예",
+        builder.setMessage("한번 지운 메모는 복구할 수 없어요. \n그래도 지우시겠어요?");
+        builder.setPositiveButton("아니요",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+        builder.setNegativeButton("예",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         listMemoData.remove(delPos);
@@ -134,11 +140,14 @@ public class Memo_detail extends AppCompatActivity {
                         finish(); // 현재 액티비티 종료
                     }
                 });
-        builder.setNegativeButton("아니오",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                    }
-                });
-        builder.show();
+
+        AlertDialog alert11 = builder.create();
+        alert11.show();
+
+        Button text = alert11.getButton(DialogInterface.BUTTON_NEGATIVE);
+        text.setTextColor(getResources().getColor(R.color.alertText));
+
+        Button text1 = alert11.getButton(DialogInterface.BUTTON_POSITIVE);
+        text1.setTextColor(getResources().getColor(R.color.alertText));
     }
 }

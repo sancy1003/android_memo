@@ -41,14 +41,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/realWhite"
         android:layout_weight="1">
         <EditText
             android:id="@+id/et_memo_write"
-            android:layout_margin="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#ffffff"
             android:textSize="18sp"
+            android:textColor="@color/realBlack"
             android:hint="메모를 남겨주세요."
             android:gravity="top">
         </EditText>
@@ -58,6 +62,7 @@
         style="@style/Widget.AppCompat.ButtonBar"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        android:background="@color/realWhite"
         android:orientation="horizontal"
         >
 
@@ -67,13 +72,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
             <ImageButton
                 android:id="@+id/btn_blue"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/post_blue"
-                android:scaleType="fitXY"
-                android:background="@drawable/post_blue"/>
+                android:src="@drawable/p_blue"
+                android:scaleType="centerInside"
+                android:background="@color/realWhite"/>
+
+                <ImageView
+                    android:id="@+id/iv_check_blue"
+                    android:src="@drawable/ic_check_black_24dp"
+                    android:tint="#FF4C4C"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"/>
+
+            </RelativeLayout>
 
 
         </LinearLayout>
@@ -83,14 +102,29 @@
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
             <ImageButton
                 android:id="@+id/btn_green"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/post_green"
-                android:scaleType="fitXY"
-                android:background="@drawable/post_green"/>
+                android:scaleType="centerInside"
+                android:src="@drawable/p_green"
+                android:background="@color/realWhite"/>
+
+            <ImageView
+                android:id="@+id/iv_check_green"
+                android:src="@drawable/ic_check_black_24dp"
+                android:tint="#FF4C4C"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:visibility="invisible"/>
+
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -100,29 +134,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageButton
-                android:id="@+id/btn_purple"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/post_purple"
-                android:scaleType="fitXY"
-                android:background="@drawable/post_purple"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:padding="3dp"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                android:layout_height="match_parent">
 
             <ImageButton
                 android:id="@+id/btn_red"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/post_red"
-                android:scaleType="fitXY"
-                android:background="@drawable/post_red"/>
+                android:src="@drawable/p_red"
+                android:scaleType="centerInside"
+                android:background="@color/realWhite"/>
+
+            <ImageView
+                android:id="@+id/iv_check_red"
+                android:src="@drawable/ic_check_black_24dp"
+                android:tint="#FF4C4C"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:visibility="invisible"/>
+
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -132,13 +165,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
             <ImageButton
                 android:id="@+id/btn_yellow"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/post_yellow"
-                android:scaleType="fitXY"
-                android:background="@drawable/post_yellow"/>
+                android:src="@drawable/p_yellow"
+                android:scaleType="centerInside"
+                android:background="@color/realWhite"/>
+
+            <ImageView
+                android:id="@+id/iv_check_yellow"
+                android:src="@drawable/ic_check_black_24dp"
+                android:tint="#FF4C4C"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:visibility="invisible"/>
+
+            </RelativeLayout>
 
         </LinearLayout>
 

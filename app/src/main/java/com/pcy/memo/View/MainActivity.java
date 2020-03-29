@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Memo_frag memo_frag;
     private Checklist_frag checklist_frag;
     private Search_frag search_frag;
+    private long backBtnTime = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,20 @@ public class MainActivity extends AppCompatActivity {
                 ft.replace(R.id.main_frame, search_frag);
                 ft.commit();
                 break;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        long curTime = System.currentTimeMillis();
+        long gapTime = curTime - backBtnTime;
+
+        if(0 <= gapTime && 2000 >= gapTime) {
+            super.onBackPressed();
+        }
+        else {
+            backBtnTime = curTime;
+            Toast.makeText(this, "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
         }
     }
 }
