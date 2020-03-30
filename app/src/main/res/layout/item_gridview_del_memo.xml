@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="200dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/gvItem_memo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/p_blue"
+        android:layout_margin="10dp">
+        
+    <TextView
+        android:id="@+id/tv_memo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="메모메모메모메모메모메모메모메모메모메모메모메모메모메모메모메모"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingBottom="20dp"/>
+
+    </LinearLayout>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_check_black_24dp"
+            android:tint="#FF5252"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

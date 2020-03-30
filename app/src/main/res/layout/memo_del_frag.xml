@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@drawable/gradient"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:text="Pastel Note"
+            android:layout_marginLeft="15dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:textSize="25sp"/>
+
+        <ImageButton
+            android:id="@+id/btn_memo_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:tint="#ffffff"
+            android:src="@drawable/ic_delete_black_24dp"
+            android:background="#00FFFFFF"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:backgroundTint="@color/realWhite"
+        android:id="@+id/ll_memo_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridView
+            android:id="@+id/gv_memo"
+            android:background="@color/realWhite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="2"/>
+
+    </LinearLayout>
+
+</LinearLayout>
