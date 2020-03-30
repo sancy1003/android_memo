@@ -20,6 +20,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.pcy.memo.Adapter.MemoGridViewAdapter;
 import com.pcy.memo.Domain.Memo_data_manager;
@@ -32,12 +34,12 @@ import java.util.ArrayList;
 public class Memo_frag extends Fragment {
 
     private View view;
-    private ImageButton btn_memo_write;
+    private ImageButton btn_memo_write, btn_memo_delete;
     private GridView gv_memo;
     private MemoGridViewAdapter memoGridViewAdapter;
     private ArrayList<Memo_data> listMemoData;
     private Memo_data_manager memoDataManager;
-    private static final int REQUEST_CODE = 5302, MEMO_EDIT = 2000, MEMO_RETURN=2002;
+    private static final int REQUEST_CODE = 5302, MEMO_DEL = 2005, MEMO_RETURN=2002;
     private boolean delResult = false;
 
     @Nullable
@@ -45,6 +47,7 @@ public class Memo_frag extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.memo_frag, container, false);
         btn_memo_write = view.findViewById(R.id.btn_memo_write);
+        btn_memo_delete = view.findViewById(R.id.btn_memo_delete);
         gv_memo = (GridView) view.findViewById(R.id.gv_memo);
         memoDataManager = new Memo_data_manager(getContext());
 
@@ -58,6 +61,14 @@ public class Memo_frag extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Memo_write.class);
+                startActivityForResult(intent, REQUEST_CODE);
+            }
+        });
+
+        btn_memo_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Memo_Delete.class);
                 startActivityForResult(intent, REQUEST_CODE);
             }
         });
@@ -82,6 +93,9 @@ public class Memo_frag extends Fragment {
         } else if(requestCode == REQUEST_CODE && resultCode == MEMO_RETURN){
             listMemoData = (ArrayList<Memo_data>) data.getSerializableExtra("listMemoData");
             SaveData();
+            CreateMemo(listMemoData);
+        } else if(requestCode == REQUEST_CODE && resultCode == MEMO_DEL){
+            LoadData();
             CreateMemo(listMemoData);
         }
     }

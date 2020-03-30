@@ -27,11 +27,13 @@
     </LinearLayout>
 
         <ImageView
+            android:id="@+id/iv_del_check"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/ic_check_black_24dp"
             android:tint="#FF5252"
-            android:layout_centerInParent="true"/>
+            android:layout_centerInParent="true"
+            android:visibility="invisible"/>
 
     </RelativeLayout>
 

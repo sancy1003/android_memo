@@ -19,6 +19,7 @@
         <activity android:name=".View.Memo_write"
             android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".View.Memo_detail" />
+        <activity android:name=".View.Memo_Delete" />
         <activity android:name=".View.Memo_edit"
             android:windowSoftInputMode="adjustResize"/>
     </application>
