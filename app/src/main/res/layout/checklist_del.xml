@@ -20,15 +20,6 @@
             android:textColor="#ffffff"
             android:textSize="25sp"/>
 
-        <ImageButton
-            android:id="@+id/btn_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginRight="15dp"
-            android:tint="#ffffff"
-            android:src="@drawable/ic_delete_black_24dp"
-            android:background="#00FFFFFF"/>
-
     </LinearLayout>
 
     <LinearLayout
@@ -60,22 +51,36 @@
 
             </LinearLayout>
 
-            <ImageButton
-                android:id="@+id/btn_checkList_write"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/roundbtn"
-                android:tint="@color/realWhite"
-                android:scaleType="fitXY"
-                android:padding="20dp"
-                android:outlineAmbientShadowColor="@color/realBlack"
-                android:src="@drawable/ic_add_black_24dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="22dp"
-                android:layout_marginBottom="22dp">
+                android:orientation="horizontal"
+                >
 
-            </ImageButton>
+                <TextView
+                    android:id="@+id/tv_del_ok"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="지우기"
+                    android:textColor="#7ACBF7"
+                    android:textSize="22sp"
+                    android:gravity="center"
+                    android:background="@drawable/border"/>
+
+                <TextView
+                    android:id="@+id/tv_del_cancel"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border"
+                    android:text="취소"
+                    android:textColor="#7ACBF7"
+                    android:textSize="22sp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
 
 
         </RelativeLayout>

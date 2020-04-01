@@ -4,8 +4,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -14,6 +16,7 @@ import androidx.core.content.ContextCompat;
 import com.pcy.memo.Model.CheckList_data;
 import com.pcy.memo.Model.Memo_data;
 import com.pcy.memo.R;
+import com.pcy.memo.View.MainActivity;
 
 import java.util.ArrayList;
 
@@ -22,15 +25,18 @@ public class CheckListViewAdapter extends BaseAdapter {
     private ArrayList<CheckList_data> data;
 
     public interface ListCheckBoxClickListener {
-        void onListCheckBoxClick(int position);
+        void onListCheckBoxClick(int position, Boolean isChecked);
     }
 
-    private ListCheckBoxClickListener listCheckBoxClickListener;
+    ListCheckBoxClickListener listCheckBoxClickListener;
 
-    public CheckListViewAdapter(Context context, ArrayList<CheckList_data> data, ListCheckBoxClickListener listCheckBoxClickListener) {
+    public void setOnItemClickListener(ListCheckBoxClickListener listCheckBoxClickListener) {
+        this.listCheckBoxClickListener = listCheckBoxClickListener;
+    }
+
+    public CheckListViewAdapter(Context context, ArrayList<CheckList_data> data) {
         this.context = context;
         this.data = data;
-        this.listCheckBoxClickListener = listCheckBoxClickListener;
     }
 
     @Override
@@ -66,7 +72,7 @@ public class CheckListViewAdapter extends BaseAdapter {
         convertView = inflater.inflate(R.layout.item_listview_checklist, parent, false);
         //}
 
-        CheckBox cb_listView = convertView.findViewById(R.id.cb_listView);
+        final CheckBox cb_listView = convertView.findViewById(R.id.cb_listView);
         TextView tv_checkList = convertView.findViewById(R.id.tv_checkList);
 
         CheckList_data checkListData = data.get(position);
@@ -80,12 +86,22 @@ public class CheckListViewAdapter extends BaseAdapter {
             cb_listView.setChecked(false);
         }
 
-        cb_listView.setOnClickListener(new CheckBox.OnClickListener(){
+        cb_listView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listCheckBoxClickListener.onListCheckBoxClick(position);
+                ((MainActivity)context).clickCheckBox(position,  cb_listView.isChecked());
             }
         });
+
+        /*
+        cb_listView.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                listCheckBoxClickListener.onListCheckBoxClick(position, isChecked);
+            }
+        });
+        */
+
 
         return convertView;
     }

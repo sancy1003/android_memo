@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="50dp" android:descendantFocusability="blocksDescendants">
+
+    <TextView
+        android:layout_weight="1"
+        android:id="@+id/tv_checkList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="체크리스트"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:singleLine="true"/>
+
+
+    <ImageView
+        android:layout_weight="1"
+        android:layout_marginRight="10dp"
+        android:id="@+id/iv_del_check"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_check_black_24dp"
+        android:tint="#FF5252"
+        android:visibility="invisible"/>
+
+
+</LinearLayout>

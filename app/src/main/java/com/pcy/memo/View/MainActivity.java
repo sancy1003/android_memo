@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private FragmentTransaction ft;
     private Memo_frag memo_frag;
     private Checklist_frag checklist_frag;
-    private Search_frag search_frag;
     private long backBtnTime = 0;
 
     @Override
@@ -41,16 +40,12 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.menu_check_list:
                         setFrag(1);
                         break;
-                    case R.id.menu_search:
-                        setFrag(2);
-                        break;
                 }
                 return true;
             }
         });
         memo_frag = new Memo_frag();
         checklist_frag = new Checklist_frag();
-        search_frag = new Search_frag();
         setFrag(0); //  첫 프래그먼트 화면 지정
     }
 
@@ -65,10 +60,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 1:
                 ft.replace(R.id.main_frame, checklist_frag);
-                ft.commit();
-                break;
-            case 2:
-                ft.replace(R.id.main_frame, search_frag);
                 ft.commit();
                 break;
         }
@@ -86,5 +77,9 @@ public class MainActivity extends AppCompatActivity {
             backBtnTime = curTime;
             Toast.makeText(this, "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void clickCheckBox(int position, boolean isChecked) {
+        checklist_frag.clickCheckBox(position, isChecked);
     }
 }

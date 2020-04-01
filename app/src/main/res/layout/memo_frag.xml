@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="5"
-            android:text="Pastel Note"
+            android:text="Today Memo"
             android:layout_marginLeft="15dp"
             android:textStyle="bold"
             android:textColor="#ffffff"
